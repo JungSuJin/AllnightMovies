@@ -17,7 +17,7 @@ apply plugin: 'war'
 
 
 war {
-	baseName = 'allnightMovies'
+	baseName = 'movie'
 	version = '0.0.1-SNAPSHOT'
 }
 sourceCompatibility = 1.8
@@ -32,12 +32,16 @@ configurations {
 }
 
 dependencies {
-	compile('org.springframework.boot:spring-boot-starter-jdbc')
-	compile('org.mybatis.spring.boot:mybatis-spring-boot-starter:1.1.1')
+	compile('org.apache.tomcat.embed:tomcat-embed-jasper')
+	compile('org.projectlombok:lombok')
 	compile('org.springframework.boot:spring-boot-starter-web')
-	compileOnly('org.projectlombok:lombok')
+	compile "org.springframework.boot:spring-boot-starter-jdbc"
+	compile "org.mybatis:mybatis:3.3.0"
+	compile "org.mybatis:mybatis-spring:1.2.3"
 	providedRuntime('org.springframework.boot:spring-boot-starter-tomcat')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 	compile group: 'javax.servlet', name: 'jstl', version: '1.2'
-	compile('org.apache.tomcat.embed:tomcat-embed-jasper')
+	compile group: 'javax.mail', name: 'mail', version: '1.4.7'
+	compile group: 'org.json', name: 'json', version: '20090211'
+	compile group: 'servlets.com', name: 'cos', version: '05Nov2002'
 }

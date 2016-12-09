@@ -1,16 +1,13 @@
 package com.allnightMovies.model.data.movieInfo;
 
-import java.util.Date;
+import lombok.Data;
 
-import lombok.Getter;
-import lombok.Setter;
-
-@Getter
-@Setter
+@Data
 public class MovieReviewBoard {
 	private String reviewContents;
+	private String reviewWriter;
+	private String writeDate;
 	private String movieTitle;
-	private String userID;
 	private int reviewEvaluate;
-	private Date writeDate;
+	private int reviewNo;
 }
